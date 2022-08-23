@@ -1,19 +1,37 @@
-<!-- HTML for static distribution bundle build -->
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Swagger UI</title>
-    <link rel="stylesheet" type="text/css" href="dist/swagger-ui.css" />
-    <link rel="stylesheet" type="text/css" href="dist/index.css" />
-    <link rel="icon" type="image/png" href="dist/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="dist/favicon-16x16.png" sizes="16x16" />
-  </head>
-
-  <body>
-    <div id="swagger-ui"></div>
-    <script src="dist/swagger-ui-bundle.js" charset="UTF-8"> </script>
-    <script src="dist/swagger-ui-standalone-preset.js" charset="UTF-8"> </script>
-    <script src="dist/swagger-initializer.js" charset="UTF-8"> </script>
-  </body>
-</html>
+#!/bin/sh
+{
+echo "<!doctype html>"
+echo "<html lang="en">"
+echo "  <head>"
+echo "    <meta charset="utf-8">"
+echo "    <meta name="viewport" content="width=device-width, initial-scale=1">"
+echo "    <title>ACPMP Reports Collection</title>"
+echo "    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">"
+echo "  </head>"
+echo "  <body>"
+echo "	<div class="container">"
+echo "  	<div class="row row-cols-1 row-cols-md-2 g-4">"
+echo "    	<h1>ACPMP Reports</h1>"
+echo "<hr>"
+for dir in */ ;  do
+if [[ -d $dir ]]; then
+ echo "${dir%/}"
+ echo "$path"
+echo " <div class="col-4" style=\"margin-bottom: 50px;\">"
+echo " <div class="card text-center">"
+echo "  <div class="card-header">"
+echo "$path"
+echo "  </div>"
+echo "  <div class="card-body">"
+for f in `find "$path" -type f -name "*.html"| sort`; do
+file=`basename "$f"`
+echo "	<a href=\"$path/$file\">$file</a><br/>"
+done
+echo "	</div>"
+echo "  </div>"
+echo "</div>"
+fi
+done
+echo "  </body>"
+echo "</html>"
+} > test.html
