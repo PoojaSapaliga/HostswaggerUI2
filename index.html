@@ -16,22 +16,8 @@ echo "<hr>"
 for dir in */ ;  do
 if [[ -d $dir ]]; then
  echo "${dir%/}"
- echo "$path"
-echo " <div class="col-4" style=\"margin-bottom: 50px;\">"
-echo " <div class="card text-center">"
-echo "  <div class="card-header">"
-echo "$path"
-echo "  </div>"
-echo "  <div class="card-body">"
-for f in `find "$path" -type f -name "*.html"| sort`; do
-file=`basename "$f"`
-echo "	<a href=\"$path/$file\">$file</a><br/>"
 done
-echo "	</div>"
-echo "  </div>"
-echo "</div>"
-fi
-done
+
 echo "  </body>"
 echo "</html>"
 } > test.html
