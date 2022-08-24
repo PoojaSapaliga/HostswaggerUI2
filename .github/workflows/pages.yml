@@ -19,6 +19,10 @@ jobs:
       with:
         repository: PoojaSapaliga/HostSwaggerUI
         ref: master
+    - name: setup git config
+      run: |
+        git config user.name "GitHub Actions Bot"
+        git config user.email "poojasapaliga.poojasapaliga@philips.com"
     - name: remove Directory and commit
       run: |
         # Stage the file, commit and push
