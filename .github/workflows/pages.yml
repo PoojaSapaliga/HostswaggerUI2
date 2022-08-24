@@ -21,7 +21,7 @@ jobs:
         ref: master
     - name: setup git config
       run: |
-        git config user.name "GitHub Actions Bot"
+        git config user.name "PoojaSapaliga"
         git config user.email "poojasapaliga.poojasapaliga@philips.com"
     - name: remove Directory and commit
       run: |
