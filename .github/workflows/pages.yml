@@ -19,3 +19,10 @@ jobs:
       with:
         repository: PoojaSapaliga/HostSwaggerUI
         ref: master
+    - name: remove Directory and commit
+      run: |
+        # Stage the file, commit and push
+        git rm -r check1
+        git commit -m "removed the directory"
+        git push origin master
+
