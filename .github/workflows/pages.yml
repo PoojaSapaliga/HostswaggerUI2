@@ -42,5 +42,6 @@ jobs:
         uses: actions/deploy-pages@v1
       - name: Run the bash script
         run: |
-          chmod +x index.sh
-          ./index.sh
+          ls
+          chmod +x index.txt
+          ./index.txt
