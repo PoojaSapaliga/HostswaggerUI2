@@ -1,2 +1,6 @@
 #! usr/bin/bash
-echo "Hello World"
+echo '<html>
+<body>
+"welcome to peace world".
+</body>
+</html>'
