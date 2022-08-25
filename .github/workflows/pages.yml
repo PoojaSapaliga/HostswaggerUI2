@@ -42,7 +42,7 @@ jobs:
         uses: actions/deploy-pages@v1
       - name: Run the bash script
         run: |
-          ls
           chmod +x index.txt
           ./index.txt
           ls
+          cat index.html
