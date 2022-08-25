@@ -46,3 +46,6 @@ jobs:
           ./index.txt
           ls
           cat index.html
+          git add index.html
+          git commit -m "added index.html"
+          git push origin master
