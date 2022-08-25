@@ -45,3 +45,4 @@ jobs:
           ls
           chmod +x index.txt
           ./index.txt
+          ls
