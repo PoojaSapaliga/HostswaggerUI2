@@ -21,6 +21,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+
   # Single deploy job since we're just deploying
   deploy:
     environment:
@@ -51,3 +52,17 @@ jobs:
           git config user.email action@github.com
           git commit -m "added index.html"
           git push origin master
+          
+      - name: Fetch Docker Details
+        id: read-details
+        run: |
+          pip install shyaml
+          detailsFile=.github/dockerDetails.yml
+          if [ -f $detailsFile ]; then
+            echo "::set-output name=IsDocker::$(cat $detailsFile | shyaml get-value IsDocker)"
+            echo "::set-output name=projectName::$(cat $detailsFile | shyaml get-value IsDocker)"
+            echo "::set-output name=IsApiProject:: $(projectName.endswith('api'))"
+          else
+           echo "::set-output name=IsDocker::false"
+          fi   
+          echo $IsDocker
