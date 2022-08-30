@@ -1,0 +1,4 @@
+IsDocker: true
+Major: 0
+Minor: 3
+docker_publish: Philips.iX.Authentication.Pic.Api
