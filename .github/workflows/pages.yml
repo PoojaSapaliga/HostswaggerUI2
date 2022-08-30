@@ -48,10 +48,10 @@ jobs:
           pip install shyaml
           detailsFile=.github/dockerDetails.yml
           if [ -f $detailsFile ]; then
-            echo "::set-output name=IsDocker::$(cat $detailsFile | shyaml get-value IsDocker)"
-            echo "::set-output name=projectName::$(cat $detailsFile | shyaml get-value IsDocker)"
-            echo "::set-output name=IsApiProject:: $(projectName.endswith('api'))"
+            $isDocker= $(cat $detailsFile | shyaml get-value IsDocker)"
+            $publishDir $(cat $detailsFile | shyaml get-value docker_publish)"
+            $IsApiProject:: $(publishDir.endswith('api'))"
           else
            echo "::set-output name=IsDocker::false"
           fi   
-          echo $IsDocker
+          echo "$isDocker"
