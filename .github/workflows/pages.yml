@@ -49,9 +49,7 @@ jobs:
           detailsFile=.github/dockerDetails.yml
           if [ -f $detailsFile ]; then
             $isDocker= $(cat $detailsFile | shyaml get-value IsDocker)"
-            $publishDir $(cat $detailsFile | shyaml get-value docker_publish)"
-            $IsApiProject:: $(publishDir.endswith('api'))"
           else
-           echo "::set-output name=IsDocker::false"
+             $isDocker=false
           fi   
           echo "$isDocker"
