@@ -50,6 +50,6 @@ jobs:
           if [ -f $detailsFile ]; then
             $isDocker= $(cat $detailsFile | shyaml get-value IsDocker)
           else
-             $isDocker=false
+             $isDocker=False
           fi   
           echo "$isDocker"
