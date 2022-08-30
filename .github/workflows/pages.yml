@@ -48,7 +48,7 @@ jobs:
           pip install shyaml
           detailsFile=.github/dockerDetails.yml
           if [ -f $detailsFile ]; then
-            $isDocker= $(cat $detailsFile | shyaml get-value IsDocker)
+            $isDocker=$(cat $detailsFile | shyaml get-value IsDocker)
           else
              $isDocker=False
           fi   
